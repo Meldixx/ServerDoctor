@@ -1,0 +1,19 @@
+name: ServerDoctor
+version: '1.1.2'
+main: xyz.triosoft.serverdoctor.ServerDoctorPlugin
+api-version: '1.21.11'
+author: Meldix
+description: Lightweight diagnostics, history and private offline HTML reports for Paper.
+load: POSTWORLD
+commands:
+  doctor:
+    description: Analyze server health and generate a local HTML report.
+    usage: /doctor <scan|status|latest|history|report|chunks|spark|web|reload>
+    permission: serverdoctor.admin
+permissions:
+  serverdoctor.admin:
+    description: Full access to ServerDoctor diagnostics and reports.
+    default: op
+  serverdoctor.alerts:
+    description: Receives in-game performance alerts.
+    default: op

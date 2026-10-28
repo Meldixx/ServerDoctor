@@ -1,0 +1,50 @@
+# ServerDoctor 1.1.1 | Paper 1.21.11 / Java 21
+scan:
+  duration-seconds: 15
+  cooldown-seconds: 20
+  max-history: 40
+thresholds:
+  min-tps: 18.5
+  max-mspt: 45.0
+  max-heap-percent: 85.0
+  max-cpu-percent: 90.0
+  max-world-entities: 1800
+  max-world-block-entities: 4500
+  max-world-chunks: 2500
+  min-free-disk-gb: 2.0
+privacy:
+  include-plugin-list: false
+monitor:
+  enabled: true
+  # Rolling tick-duration samples: detect >= threshold, not proof of the cause.
+  spike-threshold-ms: 100.0
+  spike-cooldown-seconds: 30
+  gc-pause-threshold-ms: 200
+  retain-events: 100
+alerts:
+  enabled: true
+  min-interval-seconds: 300
+  low-tps: 17.0
+  high-mspt: 60.0
+  high-heap-percent: 92.0
+  in-game: true
+  discord:
+    enabled: false
+    webhook-url: ''
+chunks:
+  max-chunks: 1024
+  per-tick: 12
+  top-results: 40
+scheduled:
+  enabled: false
+  interval-minutes: 30
+  prune-old-reports: true
+web:
+  enabled: false
+  bind: '127.0.0.1'
+  port: 8765
+  # Empty generates a cryptographically random token and writes it to config.yml.
+  token: ''
+spark:
+  # Only manual /doctor spark start; Paper's built-in profiler produces its own URL.
+  timeout-seconds: 180
